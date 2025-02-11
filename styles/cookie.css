@@ -5,13 +5,22 @@
     width: 100%;
     padding: 30px 60px 30px 30px;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgba(141, 141, 141, 0.1) -10px -5px 30px;
+    -webkit-box-shadow: rgba(141, 141, 141, 0.1) -10px -5px 30px;
+            box-shadow: rgba(141, 141, 141, 0.1) -10px -5px 30px;
     border-radius: 16px;
     left: 50%;
-    transform: translate(-50%, 0px);
+    -webkit-transform: translate(-50%, 0px);
+        -ms-transform: translate(-50%, 0px);
+            transform: translate(-50%, 0px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index: 1000;
 }
 
@@ -25,33 +34,32 @@
 }
 
 .cookie__button {
-    /* background-color: #954ced;
-    border: 2px solid transparent;
-    border-radius: 16px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 25px;
-    margin-right: 20px;
-    max-width: 100%;
-    padding: 14px 28px; */
+    -webkit-box-align: center;
 
-    align-items: center;
+        -ms-flex-align: center;
+
+            align-items: center;
     background-color: #954ced;
     border: 2px solid transparent;
     border-radius: 16px;
     color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-family: Outfit;
     font-size: 20px;
     font-weight: 600;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     line-height: 25px;
     margin-right: 20px;
     max-width: 100%;
     overflow: hidden;
     padding: 14px 28px;
     position: relative;
+    -webkit-transition: scale .3s;
+    -o-transition: scale .3s;
     transition: scale .3s;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -67,6 +75,8 @@
     height: 0;
     left: -40px;
     position: absolute;
+    -webkit-transition: left .3s, bottom .3s, height 1s, width 1s, scale .3s;
+    -o-transition: left .3s, bottom .3s, height 1s, width 1s, scale .3s;
     transition: left .3s, bottom .3s, height 1s, width 1s, scale .3s;
     width: 0;
     z-index: -1;
@@ -77,6 +87,8 @@
     height: 100%;
     left: 0;
     scale: 5;
+    -webkit-transition: left .3s, bottom .3s, height .5s, width 1s;
+    -o-transition: left .3s, bottom .3s, height .5s, width 1s;
     transition: left .3s, bottom .3s, height .5s, width 1s;
     width: 100%;
 }
@@ -84,21 +96,29 @@
 
 
 .cookie__decline-button {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: transparent;
     border: 2px solid #954ced;
     border-radius: 16px;
     color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-family: Outfit;
     font-size: 20px;
     font-weight: 600;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     line-height: 25px;
     max-width: 100%;
     overflow: hidden;
     padding: 14px 28px;
     position: relative;
+    -webkit-transition: scale .3s;
+    -o-transition: scale .3s;
     transition: scale .3s;
 }
 
@@ -110,6 +130,8 @@
     height: 0;
     left: -40px;
     position: absolute;
+    -webkit-transition: left .3s, bottom .3s, height 1s, width 1s, scale .3s;
+    -o-transition: left .3s, bottom .3s, height 1s, width 1s, scale .3s;
     transition: left .3s, bottom .3s, height 1s, width 1s, scale .3s;
     width: 0;
     z-index: -1;
@@ -120,6 +142,8 @@
     height: 100%;
     left: 0;
     scale: 5;
+    -webkit-transition: left .3s, bottom .3s, height .5s, width 1s;
+    -o-transition: left .3s, bottom .3s, height .5s, width 1s;
     transition: left .3s, bottom .3s, height .5s, width 1s;
     width: 100%;
 }
@@ -127,4 +151,3 @@
 .hidden {
     display: none;
 }
-

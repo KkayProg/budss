@@ -1,9 +1,7 @@
-/* убираем нижний ползунок прокрутки */
 body {
     overflow-x: hidden;
 }
 
-/* фон нашего модального окна */
 .modal {
     background: rgba(0, 0, 0, 0.8);
     display: none;
@@ -13,16 +11,18 @@ body {
     left: 0px;
     top: 0px;
     -webkit-box-pack: center;
-    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
     -webkit-box-align: center;
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     overflow: auto;
     overscroll-behavior-y: none;
     z-index: 1010;
-    animation: 0.2s ease-in-out 0s 1 normal none running animation-8xsd2g;
+    -webkit-animation: 0.2s ease-in-out 0s 1 normal none running animation-8xsd2g;
+            animation: 0.2s ease-in-out 0s 1 normal none running animation-8xsd2g;
 }
 
-/* позиционирование самого модального окна */
 .modal__active {
     position: absolute;
     width: 417px;
@@ -36,7 +36,6 @@ body {
     color: #070707;
 }
 
-/* кнопочка закрытия модального окна */
 .modal__close {
     position: absolute;
     right: 16px;
@@ -45,14 +44,12 @@ body {
     z-index: 1;
 }
 
-/* сама картинка кнопочки закрытия */
 .modalClose img {
     margin: 3px;
     width: 24px;
     height: 24px;
 }
 
-/* делаем позиционирование внутренних элементов относительно модального окна */
 .modal__window {
     position: relative;
 }
@@ -79,9 +76,16 @@ body {
 
 .modal__label {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     margin-bottom: 10px;
 }
 
@@ -103,15 +107,21 @@ body {
     position: relative;
     width: 100%;
     height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-    justify-content: space-between;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
     -webkit-box-align: center;
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     color: rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(241, 241, 241);
     border-radius: 14px;
+    -webkit-transition: background-color 0.2s, border-color 0.2s;
+    -o-transition: background-color 0.2s, border-color 0.2s;
     transition: background-color 0.2s, border-color 0.2s;
 }
 
@@ -121,7 +131,9 @@ body {
     font-style: normal;
     line-height: 157%;
     padding: 10px 16px;
-    flex: 1 1 0%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
     width: 100%;
     background: 0;
     border: 0;
@@ -183,17 +195,12 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
 @media (max-width: 768px) {
     .buttonWrapper {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width: 100%;
     }
 

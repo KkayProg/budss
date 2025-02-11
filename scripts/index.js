@@ -11,8 +11,8 @@ function moveLegalLinks() {
     }
 }
 
-moveLegalLinks(); // Вызываем при загрузке страницы
-window.addEventListener("resize", moveLegalLinks); // Отслеживаем изменение размера окна
+moveLegalLinks(); 
+window.addEventListener("resize", moveLegalLinks); // отслеживание изменение размера окна
 
 // Coookie
 const cookieAccet = document.getElementById('cookieBtnAccet');
@@ -34,18 +34,18 @@ const humburgerWrapper = document.getElementById('humburger__wrapper');
 const closeburgerBtn = document.getElementById('humburger__close-btn');
 
 hamburgerMenu.addEventListener("click", () => {
-    humburgerWrapper.classList.toggle("hidden"); // Переключаем видимость меню
+    humburgerWrapper.classList.toggle("hidden");
     document.body.classList.toggle("no-scroll");
 });
 
 closeburgerBtn.addEventListener("click", () => {
-    humburgerWrapper.classList.add("hidden"); // Скрываем меню при закрытии
+    humburgerWrapper.classList.add("hidden");
     document.body.classList.remove("no-scroll");
 });
 
 
 
-// устанавливаем триггер для модального окна (название можно изменить)
+// триггер модального окна
 const modalTriggers = document.querySelectorAll(".btn");
 
 
@@ -64,26 +64,20 @@ function bodyMargin() {
     bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
 }
 
-// при длинной странице - корректируем сразу
 bodyMargin();
 
-// событие нажатия на триггер открытия модального окна
 modalTriggers.forEach(button => {
     button.addEventListener("click", () => {
-        // делаем модальное окно видимым
         modalBackground.style.display = "block";
 
-        // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
         if (windowInnerWidth >= 1366) {
             bodyMargin();
         }
 
-        // позиционируем наше окно по середине, где 175 - половина ширины модального окна
         modalActive.style.left = "calc(50% - " + (166 - scrollbarWidth / 2) + "px)";
     });
 });
 
-// нажатие на крестик закрытия модального окна
 modalClose.addEventListener("click", function () {
     modalBackground.style.display = "none";
     if (windowInnerWidth >= 1366) {
@@ -91,7 +85,6 @@ modalClose.addEventListener("click", function () {
     }
 });
 
-// закрытие модального окна на зону вне окна, т.е. на фон
 modalBackground.addEventListener("click", function (event) {
     if (event.target === modalBackground) {
         modalBackground.style.display = "none";
