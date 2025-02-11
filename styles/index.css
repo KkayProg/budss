@@ -43,16 +43,6 @@ textarea {
     display: flex;
 }
 
-/* .btn {
-    padding: 16px 31px;
-    color: #FFFFFF;
-    background-color: var(--primary-color);
-    border-radius: 16px;
-    height: 57px;
-    min-width: 182px;
-    font-size: 1.25rem;
-} */
-
 .btn {
     z-index: 1;
     position: relative;
