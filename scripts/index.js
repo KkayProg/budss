@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.style.paddingTop = "0px";
         }
     }
-
     // Проверяем положение скролла при загрузке страницы
     updateHeader();
 
