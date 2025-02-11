@@ -165,8 +165,13 @@
     }
 
     .header__menu-right {
-        padding: 16px;
+        padding: 14px 16px 0 22px;
     }
+
+    .header__menu-right.sticky {
+        padding: 14px 16px 0 22px;
+    }
+
 
     .header__btn {
         display: none;

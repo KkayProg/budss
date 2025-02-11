@@ -96,3 +96,43 @@
 //         }
 //     }
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let headerMenuRight = document.querySelector(".header__menu-right");
+    let headerMenuLeft = document.querySelector(".header__menu-left");
+    let header = document.querySelector(".header");
+
+    let headerHeight = header.offsetHeight; // Запоминаем высоту хедера
+
+    function updateHeader() {
+        if (window.scrollY > 38) { // Когда прокручено 38px
+            headerMenuRight.classList.add("sticky");
+            headerMenuLeft.classList.add("hidden");
+            document.body.style.paddingTop = `${headerHeight}px`; // Компенсируем исчезновение
+        } else {
+            headerMenuRight.classList.remove("sticky");
+            headerMenuLeft.classList.remove("hidden");
+            document.body.style.paddingTop = "0px";
+        }
+    }
+
+    // Проверяем положение скролла при загрузке страницы
+    updateHeader();
+
+    window.addEventListener("scroll", updateHeader);
+});
