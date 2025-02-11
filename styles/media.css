@@ -419,6 +419,10 @@
         width: 100%;
     }
 
+    .btn::before {
+        width: 4rem;
+    }
+
     .header__logo p {
         font-size: 29.6px;
         font-weight: 600;
