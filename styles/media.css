@@ -21,7 +21,6 @@
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between;
-        padding: 9px 16px 9px 16px;
     }
 
     .about-budss__container {
@@ -512,6 +511,10 @@
 
     .hero__container {
         margin-bottom: 122px;
+    }
+
+    .header__menu-right.sticky {
+        padding: 14px 16px 0 22px;
     }
 
     .about-budss__left__description {

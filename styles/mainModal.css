@@ -72,6 +72,7 @@ body {
     height: 57px;
     min-width: 182px;
     font-size: 1.25rem;
+    transition: background-color 1s ease-in-out;
 }
 
 .modal__label {
@@ -140,6 +141,10 @@ body {
     outline: none;
 }
 
+.modal__input-tel {
+    margin-left: 25px;
+}
+
 .modal__inputs {
     margin-bottom: 20px;
 }
@@ -171,7 +176,7 @@ body {
 }
 
 .PhoneInputCountryIconImg {
-    display: none;
+    /* display: none; */
     height: 100%;
     width: 100%;
 }
@@ -194,21 +199,25 @@ body {
     text-decoration: underline;
 }
 
+.phone-error {
+    position: absolute;
+    top: 33px;
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    display: block;
+}
+.error-message {
+    position: absolute;
+    top: 33px;
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    display: block;
+}
+
 
 @media (max-width: 768px) {
-    .buttonWrapper {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        width: 100%;
-    }
-
-    .cookie__button {
-        margin: 0 0 20px 0 !important;
-        min-width: 100%;
-    }
-
     .modal__active {
         max-width: 335px;
         padding: 20px 16px;
@@ -216,12 +225,6 @@ body {
     }
 }
 
-@media (max-width: 590px) {
-    .cookie__content {
-        font-size: 14px !important;
-    }
-
-    .cookie {
-        padding: 12px;
-    }
+.active {
+    background-color: var(--primary-color);
 }

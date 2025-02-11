@@ -2,7 +2,6 @@ const footerNav = document.querySelector(".footer__nav");
 const footerLegal = document.querySelector(".footer__legal");
 const footerBottom = document.querySelector(".footer__bottom");
 
-// перемещение ссылкок footer
 function moveLegalLinks() {
     if (window.innerWidth <= 1368) {
         footerNav.insertAdjacentElement("afterend", footerLegal);
@@ -11,24 +10,22 @@ function moveLegalLinks() {
     }
 }
 
-moveLegalLinks(); 
-window.addEventListener("resize", moveLegalLinks); // отслеживание изменение размера окна
+moveLegalLinks();
+window.addEventListener("resize", moveLegalLinks);
 
-// Coookie
-const cookieAccet = document.getElementById('cookieBtnAccet');
-const cookieDecline = document.getElementById('cookieBtnDecline');
+
+// cookie
+const cookieBtns = document.querySelectorAll('.cookieBtn');
 const cookie = document.querySelector('.cookie');
 
-
-cookieAccet.addEventListener('click', () => {
-    cookie.classList.add('hidden');
-});
-cookieDecline.addEventListener('click', () => {
-    cookie.classList.add('hidden');
+cookieBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        cookie.classList.add('hidden');
+    });
 });
 
 
-
+// Hamburger Menu
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const humburgerWrapper = document.getElementById('humburger__wrapper');
 const closeburgerBtn = document.getElementById('humburger__close-btn');
@@ -44,22 +41,15 @@ closeburgerBtn.addEventListener("click", () => {
 });
 
 
-
-// триггер модального окна
+// modal Window
 const modalTriggers = document.querySelectorAll(".btn");
-
-
-// получаем ширину отображенного содержимого и толщину ползунка прокрутки
 const windowInnerWidth = document.documentElement.clientWidth;
 const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
-
-// привязываем необходимые элементы
 const bodyElementHTML = document.getElementsByTagName("body")[0];
 const modalBackground = document.getElementsByClassName("modal")[0];
 const modalClose = document.getElementsByClassName("modal__close")[0];
 const modalActive = document.getElementsByClassName("modal__active")[0];
 
-// функция для корректировки положения body при появлении ползунка прокрутки
 function bodyMargin() {
     bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
 }
@@ -104,40 +94,238 @@ document.addEventListener("keydown", function (event) {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// sticky header
 document.addEventListener("DOMContentLoaded", function () {
     let headerMenuRight = document.querySelector(".header__menu-right");
     let headerMenuLeft = document.querySelector(".header__menu-left");
     let header = document.querySelector(".header");
 
-    let headerHeight = header.offsetHeight; // Запоминаем высоту хедера
+    let headerHeight = header.offsetHeight;
 
     function updateHeader() {
-        if (window.scrollY > 38) { // Когда прокручено 38px
+        if (window.scrollY > 38) {
             headerMenuRight.classList.add("sticky");
             headerMenuLeft.classList.add("hidden");
-            document.body.style.paddingTop = `${headerHeight}px`; // Компенсируем исчезновение
+            document.body.style.paddingTop = `${headerHeight}px`;
         } else {
             headerMenuRight.classList.remove("sticky");
             headerMenuLeft.classList.remove("hidden");
             document.body.style.paddingTop = "0px";
         }
     }
-    // Проверяем положение скролла при загрузке страницы
-    updateHeader();
 
+    updateHeader();
     window.addEventListener("scroll", updateHeader);
 });
+
+
+// modal window
+const phoneInput = document.querySelector(".modal__input-tel");
+const countrySelect = document.querySelector(".PhoneInputCountrySelect");
+
+let typingTimer;
+const typingDelay = 500;
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (countrySelect.value === "RU") {
+        phoneInput.value = "+7";
+        phoneInput.addEventListener("input", handlePhoneInput);
+        phoneInput.addEventListener("keydown", handlePhoneKeydown);
+    }
+
+    countrySelect.addEventListener("change", function () {
+        resetValidationError();
+
+        if (countrySelect.value === "RU") {
+            phoneInput.value = "+7";
+            phoneInput.addEventListener("input", handlePhoneInput);
+            phoneInput.addEventListener("keydown", handlePhoneKeydown);
+        } else {
+            phoneInput.value = "";
+            phoneInput.removeEventListener("input", handlePhoneInput);
+            phoneInput.removeEventListener("keydown", handlePhoneKeydown);
+        }
+    });
+});
+
+function handlePhoneInput() {
+    clearTimeout(typingTimer);
+    let value = phoneInput.value.replace(/\D/g, "");
+
+    if (value.length > 0) {
+        if (value.startsWith("8")) {
+            value = "7" + value.slice(1);
+        }
+
+        if (!value.startsWith("7")) {
+            value = "7" + value;
+        }
+
+        value = value.slice(0, 11);
+        phoneInput.value = formatPhoneNumber(value);
+    }
+
+    typingTimer = setTimeout(() => {
+        validatePhone(value);
+    }, typingDelay);
+}
+
+function handlePhoneKeydown(event) {
+    if (!/[\d]/.test(event.key) && !["Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+        event.preventDefault();
+    }
+
+    if (phoneInput.value.replace(/\D/g, "").length >= 11 && event.key !== "Backspace" && event.key !== "Delete") {
+        event.preventDefault();
+    }
+}
+
+function formatPhoneNumber(value) {
+    let formatted = "";
+    
+    if (value.length > 0) {
+        formatted = "+7";
+    }
+
+    if (value.length > 1) formatted += " (" + value.substring(1, 4);
+    if (value.length >= 5) formatted += ") " + value.substring(4, 7);
+    if (value.length >= 8) formatted += "-" + value.substring(7, 9);
+    if (value.length >= 10) formatted += "-" + value.substring(9, 11);
+
+    return formatted;
+}
+
+function validatePhone(value) {
+    let errorElement = document.querySelector(".phone-error");
+
+    if (!errorElement) {
+        errorElement = document.createElement("span");
+        errorElement.className = "phone-error";
+        phoneInput.parentNode.appendChild(errorElement);
+    }
+
+    const operatorCodes = [
+        "904", "910", "911", "912", "913", "914", "915", "916", "917", "918", "919",
+        "920", "921", "922", "923", "924", "925", "926", "927", "928", "929",
+        "930", "931", "932", "933", "934", "935", "936", "937", "938", "939",
+        "950", "951", "952", "953", "954", "955", "956", "957", "958", "959",
+        "960", "961", "962", "963", "964", "965", "966", "967", "968", "969",
+        "970", "971", "972", "973", "974", "975", "976", "977", "978", "979",
+        "980", "981", "982", "983", "984", "985", "986", "987", "988", "989",
+        "991", "992", "993", "994", "995", "996", "997", "998", "999"
+    ];
+
+    let errorMessage = "";
+
+    if (!/^\d+$/.test(value)) {
+        errorMessage = "Invalid phone number.";
+    } else if (value.length < 11) {
+        errorMessage = "Phone number must have 11 digits.";
+    } else {
+        const cityCode = value.substring(1, 4);
+        if (!operatorCodes.includes(cityCode)) {
+            errorMessage = "Invalid phone number.";
+        }
+    }
+
+    errorElement.textContent = errorMessage;
+    errorElement.style.color = errorMessage ? "red" : "green";
+
+    return !errorMessage; 
+}
+
+function resetValidationError() {
+    let errorElement = document.querySelector(".phone-error");
+    if (errorElement) {
+        errorElement.textContent = "";
+    }
+}
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const phoneValue = phoneInput.value.replace(/\D/g, "");
+    if (countrySelect.value === "RU" && validatePhone(phoneValue)) {
+        if (validateForm()) {
+            console.log('Форма валидна');
+            const submitBtn = document.querySelector(".modal__window__form-btn");
+            submitBtn.classList.add('active');
+        } else {
+            console.log('Форма невалидна');
+            const submitBtn = document.querySelector(".modal__window__form-btn");
+            submitBtn.classList.remove('active');
+        }
+    } else {
+        const submitBtn = document.querySelector(".modal__window__form-btn");
+        submitBtn.classList.remove('active');
+    }
+});
+
+// Валидация формы
+function validateForm() {
+    let isValid = true;
+
+    const requiredFields = document.querySelectorAll('.modal__span');
+
+    requiredFields.forEach(span => {
+        const label = span.closest('.modal__label');
+        const input = label.querySelector('.modal__input');
+
+        if (!input.value.trim()) {
+            addError(input, 'This field is required');
+            isValid = false;
+        } else {
+            removeError(input);
+        }
+    });
+
+    return isValid;
+}
+
+function addError(input, message) {
+    removeError(input);
+
+    const errorElement = document.createElement('span');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    errorElement.style.color = 'red';
+
+    input.parentNode.appendChild(errorElement);
+    input.classList.add('invalid');
+}
+
+function removeError(input) {
+    const errorElement = input.parentNode.querySelector('.error-message');
+
+    if (errorElement) {
+        errorElement.remove();
+    }
+
+    input.classList.remove('invalid');
+}
+
+const requiredInputs = document.querySelectorAll('.modal__input');
+
+requiredInputs.forEach(input => {
+    input.addEventListener('input', () => {
+        if (input.value.trim()) {
+            removeError(input);
+        }
+    });
+});
+
+function toggleSubmitButton() {
+    const submitBtn = document.querySelector(".modal__window__form-btn");
+    const phoneValue = phoneInput.value.replace(/\D/g, "");
+
+    if (countrySelect.value === "RU" && validatePhone(phoneValue) && validateForm()) {
+        submitBtn.classList.add('active');
+    } else {
+        submitBtn.classList.remove('active');
+    }
+}
+
+requiredInputs.forEach(input => {
+    input.addEventListener('input', toggleSubmitButton);
+});
+phoneInput.addEventListener('input', toggleSubmitButton);
