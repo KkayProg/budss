@@ -29,10 +29,19 @@ cookieDecline.addEventListener('click', () => {
 
 
 
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const humburgerWrapper = document.getElementById('humburger__wrapper');
+const closeburgerBtn = document.getElementById('humburger__close-btn');
 
-// document.querySelector(".hamburger-menu").addEventListener("click", () => {
-//     document.querySelector(".nav-links").classList.toggle("show-menu");
-// });
+hamburgerMenu.addEventListener("click", () => {
+    humburgerWrapper.classList.toggle("hidden"); // Переключаем видимость меню
+    document.body.classList.toggle("no-scroll");
+});
+
+closeburgerBtn.addEventListener("click", () => {
+    humburgerWrapper.classList.add("hidden"); // Скрываем меню при закрытии
+    document.body.classList.remove("no-scroll");
+});
 
 
 

@@ -194,16 +194,11 @@
     }
 
     .header__menu-right {
-        padding: 14px 16px 0 22px;
+        padding: 14px 32px 0 22px;
     }
 
     .header__menu-right.sticky {
-        padding: 14px 16px 0 22px;
-    }
-
-
-    .header__btn {
-        display: none;
+        padding: 14px 32px 0 22px;
     }
 
     .header__container {
@@ -251,10 +246,6 @@
         font-size: 40px;
         font-weight: 700;
         line-height: 42.4px;
-    }
-
-    .hamburger-menu {
-        display: block;
     }
 
     .about-budss__title {
@@ -474,6 +465,18 @@
         max-height: 43px;
     }
 }
+
+@media (max-width: 475px) {
+    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    .header__btn {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+} 
 
 @media (max-width: 425px) {
     .btn {

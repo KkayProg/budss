@@ -18,7 +18,7 @@ body {
     align-items: center;
     overflow: auto;
     overscroll-behavior-y: none;
-    z-index: 1000;
+    z-index: 1010;
     animation: 0.2s ease-in-out 0s 1 normal none running animation-8xsd2g;
 }
 
@@ -42,6 +42,7 @@ body {
     right: 16px;
     top: 16px;
     cursor: pointer;
+    z-index: 1;
 }
 
 /* сама картинка кнопочки закрытия */
