@@ -10,10 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/media.css">
+    <link rel="stylesheet" href="./styles/mainModal.css">
     <script defer src="./scripts/index.js"></script>
 </head>
 
 <body>
+    <div class="modalBackground">
+        <div class="modalActive" role="dialog">
+            <div class="modalClose">
+                <img src="./images/closeForm.svg" />
+            </div>
+            <div class="modalWindow">
+                <form>
+                    <label for="">Name</label>
+                    <input type="text" placeholder="Enter name">
+                    <label for="">Email</label>
+                    <input type="text" placeholder="Enter email">
+                    <label for="">Phone number</label>
+                    <input type="text" placeholder=" + 1 900 000 00 00 ">
+                    <label for="">Company</label>
+                    <input type="text" placeholder="Enter company">
+                    <label for="">Website/Store URL</label>
+                    <input type="text" placeholder="Enter Website/Store URL">
+
+                    <p>By&nbsp;submitting this form you are agreeing to&nbsp;Budss&rsquo;s Privacy Policy and Terms of&nbsp;Use</p>
+                    <button class="modalWindow__form-btn">Contact sales</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="container header__container">
             <nav class="header__nav">
@@ -29,7 +54,20 @@
                         </a>
                     </li>
                     <li class="header__menu-item">
-                        <buttin class="header__btn btn">Contact sales</buttin>
+                        <button class="header__btn btn">Contact sales</button>
+                        <div class="hamburger-menu">
+                            <div class="hamburger">
+                                <img src="./images/burger.svg" alt="menu">
+                            </div>
+                        </div>
+                        <ul class="nav-links">
+                            <button class="hamburger-btn btn">Contact sales</button>
+                            <li><a href="#">For Business</a></li>
+                            <li><a href="#">For Customers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms Of&nbsp;Use&nbsp;- Seller</a></li>
+                            <li><a href="#">Terms of&nbsp;Use&nbsp;- Sellers &amp;&nbsp;Customers</a></li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -41,13 +79,12 @@
             <h1 class="hero__title title">Everyone is&nbsp;an&nbsp;Influencer</h1>
             <p class="hero__description">
                 Budss is&nbsp;a&nbsp;payments as&nbsp;a&nbsp;service and WOM engine dedicated
-                to&nbsp;acquisition and retention of&nbsp;customers to&nbsp;your business.
+                to&nbsp;acquisition and retention of customers to&nbsp;your business.
             </p>
             <button class="hero__button btn">Contact sales</button>
         </div>
         <picture class="hero__piture">
-            <!-- <source srcset="images/image-large.jpg" media="(min-width: 1024px)">
-            <source srcset="images/image-medium.jpg" media="(min-width: 768px)"> -->
+            <source srcset="./images/heroImgMedia.png" media="(max-width: 425px)"> 
             <img src="./images/heroImg.png" alt="Фотография девушки">
         </picture>
     </section>
@@ -190,10 +227,10 @@
             </div>
             <div class="brand-awareness flex">
                 <div class="brand-awareness-text">
-                    <h2 class="brand-awareness__title title">Your&nbsp;Brand Awareness&nbsp;Matters</h2>
+                    <h2 class="brand-awareness__title title">Your&nbsp;Brand Awareness&nbsp;Maters</h2>
                     <p class="brand-awareness__description">
-                        Budss is a hassle-free solution to put your brand on any digital surface including Instagram,
-                        Facebook, Twitter, and TikTok.
+                        Budss is&nbsp;a&nbsp;husle free solution to&nbsp;put your brand on&nbsp;any digital surface
+                        including Instagram, Facebook, Twitter and TikTok
                     </p>
                 </div>
                 <div class="brand-awareness__links">
@@ -240,8 +277,8 @@
                 </div>
                 <div class="footer__legal">
                     <a href="#">Privacy Policy</a>
-                    <a href="#">Terms Of&nbsp;Use&nbsp;&mdash; Seller</a>
-                    <a href="#">Terms of&nbsp;Use&nbsp;&mdash; Sellers &amp;&nbsp;Customers</a>
+                    <a href="#">Terms Of&nbsp;Use&nbsp;- Seller</a>
+                    <a href="#">Terms of&nbsp;Use&nbsp;- Sellers &amp;&nbsp;Customers</a>
                 </div>
             </div>
         </div>
