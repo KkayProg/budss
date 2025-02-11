@@ -14,6 +14,18 @@ function moveLegalLinks() {
 moveLegalLinks(); // Вызываем при загрузке страницы
 window.addEventListener("resize", moveLegalLinks); // Отслеживаем изменение размера окна
 
+// Coookie
+const cookieAccet = document.getElementById('cookieBtnAccet');
+const cookieDecline = document.getElementById('cookieBtnDecline');
+const cookie = document.querySelector('.cookie');
+
+
+cookieAccet.addEventListener('click', () => {
+    cookie.classList.add('hidden');
+});
+cookieDecline.addEventListener('click', () => {
+    cookie.classList.add('hidden');
+});
 
 
 
@@ -24,74 +36,70 @@ window.addEventListener("resize", moveLegalLinks); // Отслеживаем и�
 
 
 
+// устанавливаем триггер для модального окна (название можно изменить)
+const modalTriggers = document.querySelectorAll(".btn");
 
 
+// получаем ширину отображенного содержимого и толщину ползунка прокрутки
+const windowInnerWidth = document.documentElement.clientWidth;
+const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
 
+// привязываем необходимые элементы
+const bodyElementHTML = document.getElementsByTagName("body")[0];
+const modalBackground = document.getElementsByClassName("modal")[0];
+const modalClose = document.getElementsByClassName("modal__close")[0];
+const modalActive = document.getElementsByClassName("modal__active")[0];
 
-// // устанавливаем триггер для модального окна (название можно изменить)
-// const modalTriggers = document.querySelectorAll(".btn");
+// функция для корректировки положения body при появлении ползунка прокрутки
+function bodyMargin() {
+    bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
+}
 
+// при длинной странице - корректируем сразу
+bodyMargin();
 
-// // получаем ширину отображенного содержимого и толщину ползунка прокрутки
-// const windowInnerWidth = document.documentElement.clientWidth;
-// const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
+// событие нажатия на триггер открытия модального окна
+modalTriggers.forEach(button => {
+    button.addEventListener("click", () => {
+        // делаем модальное окно видимым
+        modalBackground.style.display = "block";
 
-// // привязываем необходимые элементы
-// const bodyElementHTML = document.getElementsByTagName("body")[0];
-// const modalBackground = document.getElementsByClassName("modalBackground")[0];
-// const modalClose = document.getElementsByClassName("modalClose")[0];
-// const modalActive = document.getElementsByClassName("modalActive")[0];
+        // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
+        if (windowInnerWidth >= 1366) {
+            bodyMargin();
+        }
 
-// // функция для корректировки положения body при появлении ползунка прокрутки
-// function bodyMargin() {
-//     bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
-// }
+        // позиционируем наше окно по середине, где 175 - половина ширины модального окна
+        modalActive.style.left = "calc(50% - " + (166 - scrollbarWidth / 2) + "px)";
+    });
+});
 
-// // при длинной странице - корректируем сразу
-// bodyMargin();
+// нажатие на крестик закрытия модального окна
+modalClose.addEventListener("click", function () {
+    modalBackground.style.display = "none";
+    if (windowInnerWidth >= 1366) {
+        bodyMargin();
+    }
+});
 
-// // событие нажатия на триггер открытия модального окна
-// modalTriggers.forEach(button => {
-//     button.addEventListener("click", () => {
-//         // делаем модальное окно видимым
-//         modalBackground.style.display = "block";
+// закрытие модального окна на зону вне окна, т.е. на фон
+modalBackground.addEventListener("click", function (event) {
+    if (event.target === modalBackground) {
+        modalBackground.style.display = "none";
+        if (windowInnerWidth >= 1366) {
+            bodyMargin();
+        }
+    }
+});
 
-//         // если размер экрана больше 1366 пикселей (т.е. на мониторе может появиться ползунок)
-//         if (windowInnerWidth >= 1366) {
-//             bodyMargin();
-//         }
-
-//         // позиционируем наше окно по середине, где 175 - половина ширины модального окна
-//         modalActive.style.left = "calc(50% - " + (175 - scrollbarWidth / 2) + "px)";
-//     });
-// });
-
-// // нажатие на крестик закрытия модального окна
-// modalClose.addEventListener("click", function () {
-//     modalBackground.style.display = "none";
-//     if (windowInnerWidth >= 1366) {
-//         bodyMargin();
-//     }
-// });
-
-// // закрытие модального окна на зону вне окна, т.е. на фон
-// modalBackground.addEventListener("click", function (event) {
-//     if (event.target === modalBackground) {
-//         modalBackground.style.display = "none";
-//         if (windowInnerWidth >= 1366) {
-//             bodyMargin();
-//         }
-//     }
-// });
-
-// document.addEventListener("keydown", function (event) {
-//     if (event.key === "Escape" && modalBackground.style.display === "block") {
-//         modalBackground.style.display = "none";
-//         if (window.innerWidth >= 1366) {
-//             bodyElementHTML.style.marginRight = "0";
-//         }
-//     }
-// });
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modalBackground.style.display === "block") {
+        modalBackground.style.display = "none";
+        if (window.innerWidth >= 1366) {
+            bodyElementHTML.style.marginRight = "0";
+        }
+    }
+});
 
 
 

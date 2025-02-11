@@ -876,7 +876,7 @@ body {
 .header__menu-right.sticky {
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     background-color: #181818;
     width: 100%;
     padding: 7px 60px 6px 68px;

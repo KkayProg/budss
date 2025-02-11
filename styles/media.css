@@ -435,6 +435,10 @@
         line-height: 20.16px;
     }
 
+    .features__cards {
+        max-width: 364px;
+    }
+
     .features__card-2 {
         height: 333px
     }
