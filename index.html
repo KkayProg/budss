@@ -28,8 +28,8 @@
                             <span class="modal__text nameText">Name
                                 <span class="modal__span">*</span>
                             </span>
-                            <span class="modal__wrapper">
-                                <input class="modal__input" placeholder="Enter name" name="Name">
+                            <span class="modal__wrapper wrapper-name">
+                                <input class="modal__input required input-name" placeholder="Enter name" name="Name">
                             </span>
                         </label>
 
@@ -37,8 +37,8 @@
                             <span class="modal__text emailText">Email
                                 <span class="modal__span">*</span>
                             </span>
-                            <span class="modal__wrapper">
-                                <input autocomplete="email" type="email" class="modal__input" placeholder="Enter email"
+                            <span class="modal__wrapper wrapper-email">
+                                <input autocomplete="email" type="email" class="modal__input required input-email" placeholder="Enter email"
                                     name="Email">
                             </span>
                         </label>
@@ -61,9 +61,9 @@
                                 <span class="modal__text">Phone number
                                     <span class="modal__span">*</span>
                                 </span>
-                                <span class="modal__wrapper">
-                                    <input class="modal__input modal__input-tel" type="tel" autocomplete="tel"
-                                        placeholder="+7 900 000 00 00 " name="Phone" value="">
+                                <span class="modal__wrapper wrapper-phone">
+                                    <input class="modal__input modal__input-tel required" type="tel" autocomplete="tel"
+                                        placeholder="+7 900 000 00 00 " name="Phone"  value="">
                                 </span>
                             </label>
                         </div>
@@ -82,6 +82,7 @@
                             </span>
                         </label>
                     </div>
+                    <span class="errors-form">Please fill in all required fields</span>
 
                     <p class="modal__description">By submitting this form you are agreeing to Budss's
                         <a href="#" target="_blank" class="modal__description__link">Privacy Policy </a>and <a href="#"
