@@ -93,7 +93,6 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-
 // sticky header
 document.addEventListener("DOMContentLoaded", function () {
     let headerMenuRight = document.querySelector(".header__menu-right");
@@ -285,7 +284,7 @@ function validateForm() {
 function addError(input, message) {
     removeError(input);
 
-    const errorElement = document.createElement('span');
+    const errorElement = document.createElement('div');
     errorElement.className = 'error-message';
     errorElement.textContent = message;
     errorElement.style.color = 'red';
@@ -329,3 +328,59 @@ requiredInputs.forEach(input => {
     input.addEventListener('input', toggleSubmitButton);
 });
 phoneInput.addEventListener('input', toggleSubmitButton);
+
+
+
+
+
+const submitBtn = document.querySelector(".modal__window__form-btn");
+const modalThanks = document.querySelector(".modal-thanks");
+const thanksClose = document.querySelector(".modal-thanks__close-btn");
+const thanksMainBtn = document.querySelector(".modal-thanks__btn");
+
+submitBtn.addEventListener("click", () => {
+    if (submitBtn.classList.contains('active')) {
+        modalThanks.classList.add('show-modal-thanks');
+        modalBackground.style.display = "none";
+
+        submitBtn.classList.remove('active');
+        bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
+    } 
+});
+
+
+thanksClose.addEventListener("click", () => {
+    modalThanks.classList.remove('show-modal-thanks');
+    
+    document.querySelector("form").reset(); 
+    resetValidationError();
+
+    submitBtn.classList.remove('active');
+    
+    bodyElementHTML.style.marginRight = "0";
+});
+
+thanksMainBtn.addEventListener("click", () => {
+    modalThanks.classList.remove('show-modal-thanks');
+    
+    document.querySelector("form").reset(); 
+    resetValidationError();
+
+    submitBtn.classList.remove('active');
+    
+    bodyElementHTML.style.marginRight = "0";
+});
+
+modalTriggers.forEach(button => {
+    button.addEventListener("click", () => {
+        modalBackground.style.display = "block";
+
+        if (windowInnerWidth >= 1366) {
+            bodyMargin();
+        }
+
+        modalActive.style.left = "calc(50% - " + (166 - scrollbarWidth / 2) + "px)";
+        
+        submitBtn.classList.remove('active');
+    });
+});
