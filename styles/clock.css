@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.clock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: url(/images/clock.png);
+    -webkit-box-shadow: 7px 14px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 7px 14px 8px 0px rgba(34, 60, 80, 0.2);
+    margin-bottom: 20px;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #dddddd;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.hour-wrapper,
+.minute-wrapper,
+.second-wrapper {
+    position: absolute;
+}
+
+.hour-wrapper, .hour {
+    width: 240px;
+    height: 240px;
+}
+
+.minute-wrapper, .minute {
+    width: 280px;
+    height: 280px;
+}
+
+.second-wrapper, .second {
+    width: 320px;
+    height: 320px;
+}
+
+
+.hour, .minute, .second {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+}
+
+.hour::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 120px;
+    background-color: #dddddd;
+    z-index: 10;
+    border-radius: 5px 5px 0 0;
+}
+
+.minute::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 160px;
+    background-color: #b6b6b6;
+    z-index: 11;
+    border-radius: 5px 5px 0 0;
+}
+
+.second::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 200px;
+    background-color: #e6e6e6;
+    z-index: 12;
+    border-radius: 5px 5px 0 0;
+}
+
+.start, .pause {
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}

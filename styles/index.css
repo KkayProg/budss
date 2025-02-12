@@ -287,7 +287,7 @@ body {
     margin-bottom: 40px;
 }
 
-.hero__piture {
+.hero__picture{
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -300,10 +300,10 @@ body {
     justify-content: right;
 }
 
-.hero__piture img {
+.hero__picture img {
     width: 100%;
     height: auto;
-    max-width: 595px;
+    width: 595px;
     -o-object-fit: cover;
     object-fit: cover;
 }

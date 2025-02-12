@@ -160,10 +160,17 @@
             </p>
             <button class="hero__button btn">Contact sales</button>
         </div>
-        <picture class="hero__piture">
-            <source srcset="./images/heroImgMedia.png" media="(max-width: 425px)">
+        <picture class="hero__picture hero__picture--mobile">
+            <source srcset="./images/heroImgMedia@2x.webp 2x, ./images/heroImgMedia.webp 1x" type="image/webp" media="(max-width: 425px)">
+            <source srcset="./images/heroImgMedia@2x.png 2x, ./images/heroImgMedia.png 1x" type="image/png" media="(max-width: 425px)">
+            <img src="./images/heroImgMedia.png" alt="Фотография девушки">
+        </picture>
+        <picture class="hero__picture hero__picture--desktop">
+            <source srcset="./images/heroImg@2x.webp 2x, ./images/heroImg.webp 1x" type="image/webp">
+            <source srcset="./images/heroImg@2x.png 2x, ./images/heroImg.png 1x" type="image/png">
             <img src="./images/heroImg.png" alt="Фотография девушки">
         </picture>
+        
     </section>
 
     <section class="about-budss">
@@ -261,7 +268,7 @@
                     </div>
                     <picture class="features__picture">
                         <source srcset="./images/features1media.svg" media="(max-width: 690px)">
-                        <img src="./images/features1.svg" class="features__card-image features-image-1" alt="">
+                        <img src="./images/features1.svg" class="features__card-image features-image-1" alt="A phone">
                     </picture>
                 </div>
                 <div class="features__card features__card-2">
@@ -271,9 +278,9 @@
                             Groups. Your customer base will grow exponentially as&nbsp;your customers add their friends
                             &amp;&nbsp;family to&nbsp;your personalized group.</p>
                     </div>
-                    <img src="./images/featuresBag3.svg" class="features__card-image features-bag-1" alt="">
-                    <img src="./images/featuresBag2.svg" class="features__card-image features-bag-2" alt="">
-                    <img src="./images/featuresBag1.svg" class="features__card-image features-bag-3" alt="">
+                    <img src="./images/featuresBag3.svg" class="features__card-image features-bag-1" alt="A bug">
+                    <img src="./images/featuresBag2.svg" class="features__card-image features-bag-2" alt="A bug">
+                    <img src="./images/featuresBag1.svg" class="features__card-image features-bag-3" alt="A bug">
                 </div>
                 <div class="features__card features__card-3">
                     <div class="features__card-text features__card-text-3">
@@ -281,7 +288,7 @@
                         <p class="features__card-description">Budss allows for shoppers to&nbsp;earn immediate cash back
                             at&nbsp;their favorite stores.</p>
                     </div>
-                    <img src="./images/features3.svg" class="features__card-image features-image-3" alt="">
+                    <img src="./images/features3.svg" class="features__card-image features-image-3" alt="Like">
                 </div>
                 <div class="features__card features__card-4">
                     <div class="features__card-text features__card-text-4">
@@ -290,7 +297,7 @@
                             journey, offering recommendations for their next purchase and optimizing rewards for after
                             purchase.</p>
                     </div>
-                    <img src="./images/features4.svg" class="features__card-image features-image-4" alt="">
+                    <img src="./images/features4.svg" class="features__card-image features-image-4" alt="A phone">
                 </div>
             </div>
         </div>

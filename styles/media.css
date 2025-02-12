@@ -217,7 +217,7 @@
 
     }
 
-    .hero__piture {
+    .hero__picture {
         max-width: 100%;
     }
 
@@ -237,7 +237,7 @@
         padding: 22px 16px 0 16px;
     }
 
-    .hero__piture img {
+    .hero__picture img {
         max-width: 100%;
     }
 
@@ -466,7 +466,6 @@
 }
 
 @media (max-width: 475px) {
-    /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
     .header__btn {
         display: none;
     }
@@ -511,6 +510,10 @@
 
     .hero__container {
         margin-bottom: 122px;
+    }
+
+    .hero__picture img {
+        width: 325px;
     }
 
     .header__menu-right.sticky {
@@ -658,5 +661,14 @@
     .footer__button {
         width: 184px;
         margin-right: 0;
+    }
+    .hero__picture--desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 426px) {
+    .hero__picture--mobile {
+        display: none;
     }
 }
