@@ -181,7 +181,7 @@ function handlePhoneKeydown(event) {
 
 function formatPhoneNumber(value) {
     let formatted = "";
-    
+
     if (value.length > 0) {
         formatted = "+7";
     }
@@ -196,11 +196,13 @@ function formatPhoneNumber(value) {
 
 function validatePhone(value) {
     let errorElement = document.querySelector(".phone-error");
+    const wrapper = phoneInput.closest('.modal__wrapper');
+    if (!wrapper) return;
 
     if (!errorElement) {
         errorElement = document.createElement("span");
         errorElement.className = "phone-error";
-        phoneInput.parentNode.appendChild(errorElement);
+        wrapper.parentNode.insertBefore(errorElement, wrapper.nextSibling);
     }
 
     const operatorCodes = [
@@ -219,7 +221,7 @@ function validatePhone(value) {
     if (!/^\d+$/.test(value)) {
         errorMessage = "Invalid phone number.";
     } else if (value.length < 11) {
-        errorMessage = "Phone number must have 11 digits.";
+        errorMessage = "Invalid phone number.";
     } else {
         const cityCode = value.substring(1, 4);
         if (!operatorCodes.includes(cityCode)) {
@@ -227,10 +229,13 @@ function validatePhone(value) {
         }
     }
 
-    errorElement.textContent = errorMessage;
-    errorElement.style.color = errorMessage ? "red" : "green";
+    if (errorMessage) {
+        addError(phoneInput, errorMessage);
+    } else {
+        removeError(phoneInput);
+    }
 
-    return !errorMessage; 
+    return !errorMessage;
 }
 
 function resetValidationError() {
@@ -242,15 +247,14 @@ function resetValidationError() {
 
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
+    validateForm();
 
     const phoneValue = phoneInput.value.replace(/\D/g, "");
     if (countrySelect.value === "RU" && validatePhone(phoneValue)) {
         if (validateForm()) {
-            console.log('Форма валидна');
             const submitBtn = document.querySelector(".modal__window__form-btn");
             submitBtn.classList.add('active');
         } else {
-            console.log('Форма невалидна');
             const submitBtn = document.querySelector(".modal__window__form-btn");
             submitBtn.classList.remove('active');
         }
@@ -281,27 +285,48 @@ function validateForm() {
     return isValid;
 }
 
+
 function addError(input, message) {
     removeError(input);
 
-    const errorElement = document.createElement('div');
-    errorElement.className = 'error-message';
-    errorElement.textContent = message;
-    errorElement.style.color = 'red';
+    const wrapper = input.closest('.modal__wrapper');
+    if (!wrapper) return;
 
-    input.parentNode.appendChild(errorElement);
-    input.classList.add('invalid');
+    wrapper.classList.add('error-border'); // Add error border
+
+    let existingError = wrapper.parentNode.querySelector('.error-message');
+    if (!existingError) {
+        const errorElement = document.createElement('span');
+        errorElement.className = 'error-message';
+        errorElement.textContent = message;
+
+        wrapper.parentNode.insertBefore(errorElement, wrapper.nextSibling);
+    }
+
+    input.classList.add('invalid'); // Mark the input as invalid
+
+    input.addEventListener('input', function handler() {
+        removeError(input);
+        input.removeEventListener('input', handler);
+    });
 }
 
 function removeError(input) {
-    const errorElement = input.parentNode.querySelector('.error-message');
+    input.classList.remove('invalid'); // Remove the invalid class
 
+    const wrapper = input.closest('.modal__wrapper');
+    if (!wrapper) return;
+
+    // Remove error border
+    wrapper.classList.remove('error-border');
+
+    const errorElement = wrapper.parentNode.querySelector('.error-message');
     if (errorElement) {
-        errorElement.remove();
+        errorElement.remove(); // Remove the error message
     }
-
-    input.classList.remove('invalid');
 }
+
+
 
 const requiredInputs = document.querySelectorAll('.modal__input');
 
@@ -345,29 +370,29 @@ submitBtn.addEventListener("click", () => {
 
         submitBtn.classList.remove('active');
         bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
-    } 
+    }
 });
 
 
 thanksClose.addEventListener("click", () => {
     modalThanks.classList.remove('show-modal-thanks');
-    
-    document.querySelector("form").reset(); 
+
+    document.querySelector("form").reset();
     resetValidationError();
 
     submitBtn.classList.remove('active');
-    
+
     bodyElementHTML.style.marginRight = "0";
 });
 
 thanksMainBtn.addEventListener("click", () => {
     modalThanks.classList.remove('show-modal-thanks');
-    
-    document.querySelector("form").reset(); 
+
+    document.querySelector("form").reset();
     resetValidationError();
 
     submitBtn.classList.remove('active');
-    
+
     bodyElementHTML.style.marginRight = "0";
 });
 
@@ -380,7 +405,7 @@ modalTriggers.forEach(button => {
         }
 
         modalActive.style.left = "calc(50% - " + (166 - scrollbarWidth / 2) + "px)";
-        
+
         submitBtn.classList.remove('active');
     });
 });
