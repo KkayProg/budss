@@ -272,6 +272,9 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -319,7 +322,7 @@ body {
 .modal-thanks__description {
     font-size: 1.5rem;
     font-weight: 400;
-    line-height: 0.55rem;
+    line-height: 1.8rem;
     color: #444444;
 }
 

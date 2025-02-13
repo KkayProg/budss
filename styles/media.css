@@ -277,7 +277,7 @@
         -ms-flex-align: start;
         align-items: flex-start;
         gap: 2.438rem;
-        padding: 2.5rem 16px;
+        padding: 2.5rem 1rem;
     }
 
     .statistics__item {
@@ -569,8 +569,12 @@
         margin-bottom: 17px;
     }
 
+    .features__cards {
+        max-width: 343px;
+    }
+
     .statistics__container {
-        padding-right: 1.063rem;
+        padding-right: 0.813em;
     }
 
     .scrolling-text img {
