@@ -1,3 +1,4 @@
+// перестраивание ссылок с футера
 const footerNav = document.querySelector(".footer__nav");
 const footerLegal = document.querySelector(".footer__legal");
 const footerBottom = document.querySelector(".footer__bottom");
@@ -25,7 +26,7 @@ cookieBtns.forEach(btn => {
 });
 
 
-// Hamburger Menu
+// hamburger Menu
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const humburgerWrapper = document.getElementById('humburger__wrapper');
 const closeburgerBtn = document.getElementById('humburger__close-btn');
@@ -41,81 +42,73 @@ closeburgerBtn.addEventListener("click", () => {
 });
 
 
+// header
+let headerWrapper = document.querySelector(".header__wrapper");
+let headerMenuRight = document.querySelector(".header__menu-right");
+let headerMenuLeft = document.querySelector(".header__menu-left");
 
-// sticky header
-document.addEventListener("DOMContentLoaded", function () {
-    let headerMenuRight = document.querySelector(".header__menu-right");
-    let headerMenuLeft = document.querySelector(".header__menu-left");
-    let header = document.querySelector(".header");
-
-    let headerHeight = header.offsetHeight;
-
-    function updateHeader() {
-        if (window.scrollY > 38) {
-            headerMenuRight.classList.add("sticky");
-            headerMenuLeft.classList.add("hidden");
-            document.body.style.paddingTop = `${headerHeight}px`;
-        } else {
-            headerMenuRight.classList.remove("sticky");
-            headerMenuLeft.classList.remove("hidden");
-            document.body.style.paddingTop = "0px";
-        }
+function updateHeader() {
+    if (window.scrollY > 38) {
+        headerMenuRight.classList.add("sticky");
+        headerMenuLeft.classList.add("hidden");
+        headerWrapper.classList.add("sticky-padding");
+    } else {
+        headerMenuRight.classList.remove("sticky");
+        headerMenuLeft.classList.remove("hidden");
+        headerWrapper.classList.remove("sticky-padding");
     }
-
-    updateHeader();
-    window.addEventListener("scroll", updateHeader);
-});
-
-const modalTriggers = document.querySelectorAll(".btn");
-const windowInnerWidth = document.documentElement.clientWidth;
-const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
-const bodyElementHTML = document.getElementsByTagName("body")[0];
-const modalBackground = document.getElementsByClassName("modal")[0];
-const modalClose = document.getElementsByClassName("modal__close")[0];
-const modalActive = document.getElementsByClassName("modal__active")[0];
-
-function bodyMargin() {
-    bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
 }
 
-bodyMargin();
+updateHeader();
+window.addEventListener("scroll", updateHeader);
+
+
+// modal windows
+const modalTriggers = document.querySelectorAll(".btn");
+const windowInnerWidth = document.documentElement.clientWidth;
+const scrollbarWidth = window.innerWidth - windowInnerWidth;
+const bodyElement = document.body;
+const modalBackground = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal__close");
+
+function setBodyMargin() {
+    if (scrollbarWidth > 0) {
+        bodyElement.style.marginRight = scrollbarWidth + "px";
+    }
+}
+
+function resetBodyMargin() {
+    bodyElement.style.marginRight = "0";
+}
 
 modalTriggers.forEach(button => {
     button.addEventListener("click", () => {
         modalBackground.style.display = "block";
-
         if (windowInnerWidth >= 1366) {
-            bodyMargin();
+            setBodyMargin();
         }
-
-        modalActive.style.left = "calc(50% - " + (166 - scrollbarWidth / 2) + "px)";
     });
 });
 
 modalClose.addEventListener("click", function () {
     modalBackground.style.display = "none";
-    if (windowInnerWidth >= 1366) {
-        bodyMargin();
-    }
+    resetBodyMargin();
 });
 
 modalBackground.addEventListener("click", function (event) {
     if (event.target === modalBackground) {
         modalBackground.style.display = "none";
-        if (windowInnerWidth >= 1366) {
-            bodyMargin();
-        }
+        resetBodyMargin();
     }
 });
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && modalBackground.style.display === "block") {
         modalBackground.style.display = "none";
-        if (window.innerWidth >= 1366) {
-            bodyMargin();
-        }
+        resetBodyMargin();
     }
 });
+
 
 const formState = {
     isNameValid: false,
@@ -229,7 +222,7 @@ inputEmail.addEventListener('blur', function () {
 });
 
 inputPhone.addEventListener('focus', function () {
-    isPhoneTouched = true; 
+    isPhoneTouched = true;
     removeError(wrapperPhone);
 });
 inputPhone.addEventListener('blur', function () {
@@ -347,7 +340,7 @@ function validatePhone(value, country) {
     } else if (!country) {
         errorMessage = "This field is required.";
     } else if (!value.trim()) {
-        errorMessage = "This field is required."; 
+        errorMessage = "This field is required.";
     }
 
     if (errorMessage) {
@@ -367,7 +360,7 @@ function resetValidationError() {
 }
 
 document.querySelector('form').addEventListener('submit', function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     isNameTouched = true;
     isEmailTouched = true;
@@ -380,7 +373,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
         modalBackground.style.display = "none";
 
         submitBtn.classList.remove('active');
-        bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
+        resetBodyMargin();
     } else {
         console.log('Форма невалидна, исправьте ошибки');
     }
@@ -413,7 +406,7 @@ modalTriggers.forEach(button => {
         modalBackground.style.display = "block";
 
         if (windowInnerWidth >= 1366) {
-            bodyMargin();
+            setBodyMargin();
         }
 
         modalActive.style.left = "calc(50% - " + (166 - scrollbarWidth / 2) + "px)";

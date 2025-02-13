@@ -5,38 +5,38 @@
     }
 
     .hero__container {
-        margin-bottom: 124px;
-        padding: 22px 16px 0 16px;
+        margin-bottom: 7.75rem;
+        padding: 1.375rem 1rem 0 1rem;
     }
 
     .header__menu-left {
-        padding: 0 16px;
+        padding: 0 1rem;
     }
 
     .header__menu-right {
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
     }
 
     .about-budss__container {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        gap: 40px;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 2.5rem;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
 
     .about-budss__right {
         -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-                justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
     }
 
     .about-budss__title {
@@ -48,7 +48,7 @@
     }
 
     .about-budss {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
     }
 
     .about-budss__left__description {
@@ -56,7 +56,7 @@
     }
 
     .features__container {
-        padding: 80px 16px;
+        padding: 5rem 1rem;
     }
 
     .features__card {
@@ -64,7 +64,7 @@
     }
 
     .features__card-text {
-        margin: 20px;
+        margin: 1.25rem;
     }
 
     .features__card-text-1 {
@@ -81,36 +81,36 @@
     }
 
     .features__card-title {
-        font-size: 32px;
-        line-height: 32px;
+        font-size: 2rem;
+        line-height: 2rem;
     }
 
     .contact-sales {
         text-align: center;
-        padding: 60px 0;
+        padding: 3.75rem 0;
         border: 1px solid #CFCFCF;
         border-radius: 60px;
-        margin: 0 16px;
-        margin-bottom: 40px;
+        margin: 0 1rem;
+        margin-bottom: 2.5rem;
     }
 
     .contacts {
-        padding: 40px 0;
+        padding: 2.5rem 0;
     }
 
     .footer {
-        padding: 20px 16px;
+        padding: 1.25rem 1rem;
     }
 
     .footer__top {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start;
-        padding-bottom: 40px;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding-bottom: 2.5rem;
     }
 
     .footer__nav {
@@ -118,13 +118,13 @@
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
         gap: 1rem;
     }
 
     .footer__downloads {
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 
     .footer__button {
@@ -140,19 +140,19 @@
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
         gap: 1rem;
         font-weight: 500;
         font-size: 1.25rem;
         -webkit-text-decoration-line: none;
-                text-decoration-line: none;
-        margin-bottom: 40px;
+        text-decoration-line: none;
+        margin-bottom: 2.5rem;
     }
 }
 
 @media (max-width: 940px) {
     .brand-awareness__title {
-        font-size: 72px;
+        font-size: 4.5rem;
     }
 
     .features__card-text-1 {
@@ -160,22 +160,22 @@
     }
 
     .features__card-title {
-        font-size: 54px;
-        line-height: 55px;
+        font-size: 3.375rem;
+        line-height: 3.438;
     }
 
     .features__card:nth-child(1),
     .features__card:nth-child(4) {
         -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc(100%);
-                flex: 0 0 calc(100%);
+        -ms-flex: 0 0 calc(100%);
+        flex: 0 0 calc(100%);
     }
 
     .features__card:nth-child(2),
     .features__card:nth-child(3) {
         -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc(100%);
-                flex: 0 0 calc(100%);
+        -ms-flex: 0 0 calc(100%);
+        flex: 0 0 calc(100%);
     }
 }
 
@@ -186,33 +186,30 @@
     }
 
     .header__logo p {
-        font-size: 37px;
+        font-size: 2.313rem;
         font-weight: 600;
-        line-height: 17px;
+        line-height: 1.063rem;
     }
 
-    .header__menu-right {
-        padding: 14px 32px 0 22px;
-    }
-
+    .header__menu-right,
     .header__menu-right.sticky {
-        padding: 14px 32px 0 22px;
+        padding: 0.875rem 2rem 0.5rem 1.375rem;
     }
 
     .header__container {
-        margin-bottom: 51px;
+        margin-bottom: 3.188rem;
     }
 
     .hero__title {
-        font-size: 40px;
-        line-height: 42.4px;
-        margin-bottom: 20px;
+        font-size: 2.5rem;
+        line-height: 2.65rem;
+        margin-bottom: 1.25rem;
     }
 
     .hero__description {
-        font-size: 16px;
-        line-height: 20.16px;
-        margin-bottom: 40px;
+        font-size: 1rem;
+        line-height: 1.26rem;
+        margin-bottom: 2.5rem;
 
     }
 
@@ -223,17 +220,17 @@
     .hero {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
         text-align: center;
     }
 
     .hero__container {
         max-width: 100%;
-        padding: 22px 16px 0 16px;
+        padding: 1.375rem 1rem 0 1rem;
     }
 
     .hero__picture img {
@@ -241,15 +238,15 @@
     }
 
     .title {
-        font-size: 40px;
+        font-size: 2.5rem;
         font-weight: 700;
-        line-height: 42.4px;
+        line-height: 2.65rem;
     }
 
     .about-budss__title {
         padding: 0;
         text-align: left;
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
     }
 
     .about-budss {
@@ -258,8 +255,8 @@
 
     .about-budss__container {
         -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
     }
 
     .about-budss__right__item {
@@ -268,35 +265,35 @@
     }
 
     .animated-showcase__background {
-        gap: 93px;
+        gap: 5.813rem;
     }
 
     .statistics__container {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start;
-        gap: 39px;
-        padding: 40px 16px;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        gap: 2.438rem;
+        padding: 2.5rem 16px;
     }
 
     .statistics__item {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        gap: 20px;
+        gap: 1.25rem;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
 
     .statistics__value {
         margin: 0;
         font-size: 2.5rem;
-        line-height: 42.4px;
+        line-height: 2.65rem;
     }
 
     .statistics__label {
@@ -306,47 +303,47 @@
     }
 
     .features__description {
-        margin-bottom: 40px;
-        font-size: 24px;
-        line-height: 28.8px;
+        margin-bottom: 2.5rem;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
     }
 
     .contact-sales {
-        padding: 40px 20px;
+        padding: 2.5rem 1.25rem;
     }
 
     .brand-awareness {
-        margin: 0 16px 40px 16px;
+        margin: 0 1rem 2.5rem 1rem;
     }
 
     .square {
         -webkit-box-ordinal-group: 2;
-            -ms-flex-order: 1;
-                order: 1;
+        -ms-flex-order: 1;
+        order: 1;
     }
 
     .shopify {
         -webkit-box-ordinal-group: 3;
-            -ms-flex-order: 2;
-                order: 2;
+        -ms-flex-order: 2;
+        order: 2;
     }
 
     .wooCommerce {
         -webkit-box-ordinal-group: 4;
-            -ms-flex-order: 3;
-                order: 3;
+        -ms-flex-order: 3;
+        order: 3;
     }
 
     .squareSace {
         -webkit-box-ordinal-group: 5;
-            -ms-flex-order: 4;
-                order: 4;
+        -ms-flex-order: 4;
+        order: 4;
     }
 
     .clover {
         -webkit-box-ordinal-group: 6;
-            -ms-flex-order: 5;
-                order: 5;
+        -ms-flex-order: 5;
+        order: 5;
     }
 
     .brand-awareness-text {
@@ -360,13 +357,13 @@
 
     .features__description::before {
         width: 243px;
-        height: 21.7px;
+        height: 1.356rem;
         left: auto;
         right: 0;
         bottom: 1px;
         -webkit-transform: rotate(-1.69deg);
-            -ms-transform: rotate(-1.69deg);
-                transform: rotate(-1.69deg);
+        -ms-transform: rotate(-1.69deg);
+        transform: rotate(-1.69deg);
     }
 
     .brand-awareness__links {
@@ -375,7 +372,7 @@
     }
 
     .brand-awareness__links img {
-        width: 64px;
+        width: 4rem;
     }
 
     .brand-awareness__links img:nth-child(1) {
@@ -384,20 +381,20 @@
 
     .brand-awareness__links img:nth-child(2),
     .brand-awareness__links img:nth-child(4) {
-        margin-left: 120px;
+        margin-left: 7.5rem;
     }
 
     .brand-awareness__links img:nth-child(3) {
-        margin-left: 92px;
+        margin-left: 5.75rem;
     }
 
     .brands {
-        padding: 50px 20px;
-        gap: 30px 40px;
+        padding: 3.125rem 1.25rem;
+        gap: 1.875rem 2.5rem;
     }
 
     .footer__bottom {
-        margin-top: 12px;
+        margin-top: 0.75rem;
         margin-bottom: 0;
     }
 
@@ -406,7 +403,7 @@
 @media (max-width: 690px) {
 
     .features-image-1 {
-        border-radius: 0 30px 0;
+        border-radius: 0 1.875rem 0;
     }
 
     .features__card-text {
@@ -416,12 +413,12 @@
     .features__card-title {
         font-size: 2rem;
         font-weight: 700;
-        line-height: 33.92px;
+        line-height: 2.12rem;
     }
 
     .features__card-description {
         font-size: 1rem;
-        line-height: 20.16px;
+        line-height: 1.26rem;
     }
 
     .features__cards {
@@ -473,7 +470,7 @@
         display: block;
         cursor: pointer;
     }
-} 
+}
 
 @media (max-width: 425px) {
     .btn {
@@ -494,34 +491,38 @@
         width: 27px;
     }
 
-    .header__menu-right {
-        padding: 14px 16px 0 22px;
-    }
-
     .header__container {
-        margin-bottom: 42px;
+        margin-bottom: 2.625rem;
     }
 
     .hero {
         text-align: start;
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
     }
 
     .hero__container {
-        margin-bottom: 122px;
+        margin-bottom: 7.625rem;
     }
 
     .hero__picture img {
         width: 325px;
     }
 
+    .header__menu-right {
+        padding: 0.875rem 1rem 0 1.375rem;
+    }
+
     .header__menu-right.sticky {
-        padding: 14px 16px 0 22px;
+        padding: 0.875rem 1rem 0 1.375rem;
+    }
+
+    .header__wrapper.sticky-padding {
+        min-height: 96px;
     }
 
     .about-budss__left__description {
-        font-size: 24px;
-        line-height: 28.8px;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
         width: 273px;
     }
 
@@ -532,36 +533,36 @@
 
     .about-budss__right__title {
         font-size: 2rem;
-        line-height: 33.92px;
-        margin-bottom: 16px;
+        line-height: 2.12rem;
+        margin-bottom: 1rem;
     }
 
     .about-budss__right__desctiption {
         font-size: 1rem;
-        line-height: 20.16px;
+        line-height: 1.26rem;
     }
 
     .about-budss__right {
-        gap: 57px;
+        gap: 3.563rem;
         -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
     }
 
     .about-budss__right__icon {
-        margin-bottom: 9px;
+        margin-bottom: 0.563rem;
     }
-    
+
     .about-budss {
-        margin-bottom: 78px;
+        margin-bottom: 4.875rem;
     }
 
     .animated-showcase {
-        margin-bottom: 80px;
+        margin-bottom: 5rem;
     }
 
     .features__card {
-        border-radius: 20px;
+        border-radius: 1.25rem;
     }
 
     .features__card-title {
@@ -569,7 +570,7 @@
     }
 
     .statistics__container {
-        padding-right: 13px;
+        padding-right: 1.063rem;
     }
 
     .scrolling-text img {
@@ -577,7 +578,7 @@
     }
 
     .animated-showcase__container {
-        padding: 60px 0;
+        padding: 3.75rem 0;
     }
 
     .animated-showcase__phone {
@@ -585,7 +586,7 @@
     }
 
     .features-image-4 {
-        bottom: -20px;
+        bottom: -1.25rem;
     }
 
     .brand-awareness__title {
@@ -594,8 +595,8 @@
 
     .brands {
         -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
     }
 
     .wooCommerce {
@@ -620,30 +621,30 @@
 
     .footer__brand {
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         margin-left: 6px;
         padding-top: 6px;
         margin-bottom: 26px;
     }
 
     .footer__top {
-        gap: 17px;
-        padding-bottom: 39px;
+        gap: 1.063rem;
+        padding-bottom: 2.438rem;
     }
 
     .footer__legal {
-        margin-bottom: 22px;
+        margin-bottom: 1.375rem;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     .footer__brand p {
-        font-size: 29.6px;
+        font-size: 1.85rem;
         font-weight: 600;
-        line-height: 13.6px;
+        line-height:0.85rem;
     }
 
     .footer__brand img {
@@ -653,14 +654,15 @@
     .footer__nav {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     .footer__button {
         width: 184px;
         margin-right: 0;
     }
+
     .hero__picture--desktop {
         display: none;
     }

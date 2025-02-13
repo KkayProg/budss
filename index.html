@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budss</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -38,8 +39,8 @@
                                 <span class="modal__span">*</span>
                             </span>
                             <span class="modal__wrapper wrapper-email">
-                                <input autocomplete="email" type="email" class="modal__input required input-email" placeholder="Enter email"
-                                    name="Email">
+                                <input autocomplete="email" type="email" class="modal__input required input-email"
+                                    placeholder="Enter email" name="Email">
                             </span>
                         </label>
 
@@ -63,7 +64,7 @@
                                 </span>
                                 <span class="modal__wrapper wrapper-phone">
                                     <input class="modal__input modal__input-tel required" type="tel" autocomplete="tel"
-                                        placeholder="+7 900 000 00 00 " name="Phone"  value="">
+                                        placeholder="+7 900 000 00 00 " name="Phone" value="">
                                 </span>
                             </label>
                         </div>
@@ -111,46 +112,50 @@
         </div>
     </div>
     <header class="header">
-        <div class="container header__container">
-            <nav class="header__nav">
-                <ul class="header__menu header__menu-left flex">
-                    <li class="header__menu-left__item activ"><a href="#">For Business</a></li>
-                    <li class="header__menu-left__item"><a href="#">For Customers</a></li>
-                </ul>
-                <ul class="header__menu header__menu-right flex">
-                    <li class="header__menu-item">
-                        <a href="#" class="header__logo flex">
-                            <img src="./images/logo.svg" alt="Budss">
-                            <p>budss</p>
-                        </a>
-                    </li>
-                    <li class="header__menu-item">
-                        <button class="header__btn btn">Contact sales</button>
-                        <div class="hamburger-menu">
-                            <div class="hamburger">
-                                <img src="./images/burger.svg" alt="menu">
+        <div class="header__wrapper">
+            <div class="container header__container">
+                <nav class="header__nav">
+                    <ul class="header__menu header__menu-left flex">
+                        <li class="header__menu-left__item activ"><a href="#">For Business</a></li>
+                        <li class="header__menu-left__item"><a href="#">For Customers</a></li>
+                    </ul>
+                    <ul class="header__menu header__menu-right flex">
+                        <li class="header__menu-item">
+                            <a href="#" class="header__logo flex">
+                                <img src="./images/logo.svg" alt="Budss">
+                                <p>budss</p>
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <button class="header__btn btn">Contact sales</button>
+                            <div class="hamburger-menu">
+                                <div class="hamburger">
+                                    <img src="./images/burger.svg" alt="menu">
+                                </div>
                             </div>
-                        </div>
-                        <div class="humburger__wrapper hidden" id="humburger__wrapper">
-                            <div class="humburger__header-close flex">
-                                <button id="humburger__close-btn">
-                                    <img src="./images/closeburger.svg" alt="Close">
-                                </button>
-                            </div>
-                            <button class="hamburger-btn btn">Contact sales</button>
-                            <ul class="nav-links">
-                                <li><a href="#">For Business</a></li>
-                                <li><a href="#">For Customers</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms Of&nbsp;Use&nbsp;- Seller</a></li>
-                                <li><a href="#">Terms of&nbsp;Use&nbsp;- Sellers &amp;&nbsp;Customers</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="humburger-wrapper hidden" id="humburger__wrapper">
+            <div class="humburger-wrapper__close flex">
+                <button id="humburger__close-btn">
+                    <img src="./images/closeburger.svg" alt="Close">
+                </button>
+            </div>
+            <button class="hamburger-btn btn">Contact sales</button>
+            <ul class="nav-links">
+                <li><a href="#">For Business</a></li>
+                <li><a href="#">For Customers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms Of&nbsp;Use&nbsp;- Seller</a></li>
+                <li><a href="#">Terms of&nbsp;Use&nbsp;- Sellers &amp;&nbsp;Customers</a></li>
+            </ul>
         </div>
     </header>
+    
 
     <section class="hero flex">
         <div class="container hero__container">
@@ -162,8 +167,10 @@
             <button class="hero__button btn">Contact sales</button>
         </div>
         <picture class="hero__picture hero__picture--mobile">
-            <source srcset="./images/heroImgMedia@2x.webp 2x, ./images/heroImgMedia.webp 1x" type="image/webp" media="(max-width: 425px)">
-            <source srcset="./images/heroImgMedia@2x.png 2x, ./images/heroImgMedia.png 1x" type="image/png" media="(max-width: 425px)">
+            <source srcset="./images/heroImgMedia@2x.webp 2x, ./images/heroImgMedia.webp 1x" type="image/webp"
+                media="(max-width: 425px)">
+            <source srcset="./images/heroImgMedia@2x.png 2x, ./images/heroImgMedia.png 1x" type="image/png"
+                media="(max-width: 425px)">
             <img src="./images/heroImgMedia.png" alt="Фотография девушки">
         </picture>
         <picture class="hero__picture hero__picture--desktop">
@@ -171,7 +178,7 @@
             <source srcset="./images/heroImg@2x.png 2x, ./images/heroImg.png 1x" type="image/png">
             <img src="./images/heroImg.png" alt="Фотография девушки">
         </picture>
-        
+
     </section>
 
     <section class="about-budss">
@@ -370,7 +377,7 @@
     </footer>
 
     <div class="cookie" id="cookie">
-        <div class="modal__close cookieBtn">
+        <div class="cookie__close-btn cookieBtn">
             <img src="./images/closeForm.svg" alt="Close">
         </div>
         <div class="cookie__content">This website uses cookies to ensure you get the best experience on our website.
